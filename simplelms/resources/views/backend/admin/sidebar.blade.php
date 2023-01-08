@@ -1,6 +1,7 @@
 <div id="layoutSidenav_nav">
     <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
         <div class="sb-sidenav-menu">
+            @if (Auth::user()->type == 'admin')
             <div class="nav">
           
                 <div class="sb-sidenav-menu-heading">Dashboard</div>
@@ -43,6 +44,15 @@
                 </div>
               
             </div>
+            @else
+            <div class="nav">
+          
+                <div class="sb-sidenav-menu-heading">Dashboard</div>
+          
+              
+            </div>
+            @endif
+      
         </div>
         <div class="sb-sidenav-footer">
             <div class="small">Logged in as:</div>

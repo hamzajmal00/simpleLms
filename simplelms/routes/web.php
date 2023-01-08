@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/logout',[HomeController::class,'logout'])->name('logout');
+Route::get('/enroll-course/{id}',[HomeController::class,'Enrol'])->name('enroll_course');
 Route::get('/welcome', function () {
     return view('welcome');
 })->name('welcome');

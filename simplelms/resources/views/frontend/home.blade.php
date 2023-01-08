@@ -54,7 +54,14 @@
                                 <h4 class="card-title">{{ $cours->title }}</h4>
                                 <p class="card-text">{{ $cours->description }}
                                 </p>
-                                <a href="#" class="btn btn-primary">Enroll Now</a>
+                            @auth
+                            @if (Auth::user()->type == 'user')
+                                        
+                            <a href="{{route('enroll_course',$cours->id)}}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Only Register User">Enroll Now</a>
+                            @endif 
+                            @endauth
+                                   
+                            
                             </div>
                         </div>
                     </div>
